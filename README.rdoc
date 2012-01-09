@@ -17,7 +17,7 @@ configured in you OS:
 
 Then make sure you have bundler installed, if not type:
 
-  gem install bunlder
+  gem install bundler
 
 Then install the Ruby dependencies:
 
