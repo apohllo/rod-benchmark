@@ -65,11 +65,20 @@ task :download do
     unless File.exist?(sgjp_original_file)
       puts "Unpacking sgjp.tar"
       FileUtils.mkdir_p(tar_path)
-      Archive::Tar::Minitar.unpack(File.open(tar_file_path,"rb"),tar_path)
+      begin
+        Archive::Tar::Minitar.unpack(File.open(tar_file_path,"rb"),tar_path)
+      rescue Exception
+        # There is some problem with minitar, but the files seems to be properly extracted
+      end
     end
     FileUtils.mv(sgjp_original_file,sgjp_file)
     puts "Cleaning"
     FileUtils.rm_rf(tar_file_path)
     FileUtils.rm_rf(tar_path)
   end
+end
+
+desc "Cleans all the downloaded and generated data"
+task :clean do
+  FileUtils.rm_rf(DATA_DIR)
 end
