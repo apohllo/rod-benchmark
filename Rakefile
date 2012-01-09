@@ -25,6 +25,7 @@ task :load => :download do
     sh "./utils/load_rod_data.rb"
   end
   unless File.exist?(File.join(DATA_DIR,"sqlite","rod.sqlite3"))
+    FileUtils.mkdir_p(File.join(DATA_DIR,"sqlite"))
     sh "./utils/load_ar_data.rb"
   end
 end
@@ -65,7 +66,11 @@ task :download do
     unless File.exist?(sgjp_original_file)
       puts "Unpacking sgjp.tar"
       FileUtils.mkdir_p(tar_path)
-      Archive::Tar::Minitar.unpack(File.open(tar_file_path,"rb"),tar_path)
+      begin
+        Archive::Tar::Minitar.unpack(File.open(tar_file_path,"rb"),tar_path)
+      rescue Exception
+        # There is some problem with minitar, but the files seems to be properly extracted
+      end
     end
     FileUtils.mv(sgjp_original_file,sgjp_file)
     puts "Cleaning"
