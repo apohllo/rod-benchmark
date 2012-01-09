@@ -1,0 +1,72 @@
+GIT
+  remote: git://github.com/apohllo/rod.git
+  revision: 6093fec28f2e3d92db8747a479ca42d2f5b36222
+  branch: v0.7.x
+  specs:
+    rod (0.7.1)
+      RubyInline (>= 3.10.0, < 4.0.0)
+      activemodel (>= 3.0.7, < 3.2.0)
+      bsearch (>= 1.5.0, < 1.6.0)
+      english (>= 0.5.0, < 0.6.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RubyInline (3.11.0)
+      ZenTest (~> 4.3)
+    ZenTest (4.6.2)
+    activemodel (3.1.1)
+      activesupport (= 3.1.1)
+      builder (~> 3.0.0)
+      i18n (~> 0.6)
+    activerecord (3.1.1)
+      activemodel (= 3.1.1)
+      activesupport (= 3.1.1)
+      arel (~> 2.2.1)
+      tzinfo (~> 0.3.29)
+    activesupport (3.1.1)
+      multi_json (~> 1.0)
+    archive-tar-minitar (0.5.2)
+    arel (2.2.1)
+    bsearch (1.5.0)
+    builder (3.0.0)
+    bzip2-ruby (0.2.7)
+    columnize (0.3.4)
+    english (0.5.0)
+    i18n (0.6.0)
+    linecache19 (0.5.12)
+      ruby_core_source (>= 0.1.4)
+    minitar (0.5.3)
+    multi_json (1.0.4)
+    perftools.rb (0.5.6)
+    pg (0.12.2)
+    ruby-debug-base19 (0.11.25)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby_core_source (>= 0.1.4)
+    ruby-debug19 (0.11.6)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby-debug-base19 (>= 0.11.19)
+    ruby_core_source (0.1.5)
+      archive-tar-minitar (>= 0.5.2)
+    sqlite3 (1.3.4)
+    srx-polish (0.2.1)
+      term-ansicolor (~> 1.0.5)
+    term-ansicolor (1.0.6)
+    tzinfo (0.3.31)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activerecord (~> 3.1.0)
+  bzip2-ruby
+  minitar
+  perftools.rb
+  pg
+  rod!
+  ruby-debug-base19
+  ruby-debug19
+  sqlite3
+  srx-polish

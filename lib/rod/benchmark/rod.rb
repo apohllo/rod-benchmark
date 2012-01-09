@@ -1,0 +1,7 @@
+require 'rod'
+require 'rod/benchmark/rod/database'
+require 'rod/benchmark/rod/model'
+require 'rod/benchmark/rod/flexeme'
+require 'rod/benchmark/rod/tag'
+require 'rod/benchmark/rod/tagging'
+require 'rod/benchmark/rod/word_form'

@@ -1,0 +1,6 @@
+require 'active_record'
+require 'rod/benchmark/active_record/database'
+require 'rod/benchmark/active_record/flexeme'
+require 'rod/benchmark/active_record/tag'
+require 'rod/benchmark/active_record/tagging'
+require 'rod/benchmark/active_record/word_form'
