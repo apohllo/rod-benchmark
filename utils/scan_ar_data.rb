@@ -10,22 +10,24 @@ require 'benchmark'
 iterations = 10
 count = 0
 Benchmark.bm do |benchmark|
-  iterations.times do |index|
-    benchmark.report(index.to_s) do
-      File.open("data/src/text_1.txt") do |input|
-        splitter = SRX::Polish::WordSplitter.new
-        index = 0
-        input.each do |line|
-          index += 1
-          break if index > 100000
-          splitter.sentence = line
-          splitter.each do |word|
-            form = Rod::Benchmark::ActiveRecord::WordForm.find_by_value(word.strip)
-            if form && form.flexemes.count == 1 &&
-              form.flexemes.first.word_forms.count > 1 &&
-              form.flexemes.first.taggings.any?{|t| t.tags.map(&:value).include?("subst")}
-              count += 1
-              #puts form.flexemes.first
+  %w{text_1.txt text_2.txt}.each do |file|
+    iterations.times do |index|
+      benchmark.report("#{file}: #{index}") do
+        File.open("data/src/#{file}") do |input|
+          splitter = SRX::Polish::WordSplitter.new
+          index = 0
+          input.each do |line|
+            index += 1
+            break if index > 100000
+            splitter.sentence = line
+            splitter.each do |word|
+              form = Rod::Benchmark::ActiveRecord::WordForm.find_by_value(word.strip)
+              if form && form.flexemes.count == 1 &&
+                form.flexemes.first.word_forms.count > 1 &&
+                form.flexemes.first.taggings.any?{|t| t.tags.map(&:value).include?("subst")}
+                count += 1
+                #puts form.flexemes.first
+              end
             end
           end
         end
