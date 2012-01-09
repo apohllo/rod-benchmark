@@ -9,6 +9,12 @@ against various storage engines.
 
 == BASIC USAGE:
 
+First, make sure that you have all the non-Ruby dependecies installed and properly
+configured in you OS:
+
+ * Berkeley DB
+ * Sqlite3
+
 Make sure you have bundler installe, if not type:
 
   gem install bunlder
