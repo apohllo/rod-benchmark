@@ -12,20 +12,23 @@ against various storage engines.
 First, make sure that you have all the non-Ruby dependecies installed and properly
 configured in you OS:
 
- * Berkeley DB
- * Sqlite3
+* Berkeley DB
+* Sqlite3
 
-Make sure you have bundler installe, if not type:
+Then make sure you have bundler installed, if not type:
 
   gem install bunlder
 
-Then install the dependencies:
+Then install the Ruby dependencies:
 
   bundle
 
 At the end you can run the benchmarks with rake:
 
   rake
+
+WARNING: this will take up to several hours to download 
+and process the data used in the tests.
 
 == LICENSE:
 
