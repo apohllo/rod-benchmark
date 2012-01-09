@@ -13,7 +13,7 @@ puts "Loading source data to ROD, this will take a while..."
 File.open("data/src/sgjp.txt","r:iso-8859-2:utf-8") do |input|
   input.each.with_index do |line,index|
     next unless index > 1000
-    puts "#{index}/5M #{Time.now}" if index % 1000 == 0
+    puts "#{index}/200k #{Time.now}" if index % 1000 == 0
     line.chomp!
     form_value, lemma, rest = line.split
     #puts "%-30s %-30s" % [form_value, lemma]
