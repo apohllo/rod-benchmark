@@ -78,3 +78,8 @@ task :download do
     FileUtils.rm_rf(tar_path)
   end
 end
+
+desc "Cleans all the downloaded and generated data"
+task :clean do
+  FileUtils.rm_rf(DATA_DIR)
+end
